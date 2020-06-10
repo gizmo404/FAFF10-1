@@ -1,0 +1,135 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage{verbatim}
+
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{%
+  colorlinks=true,% hyperlinks will be coloured
+  linkcolor=blue,% hyperlink text will be green
+  linkbordercolor=green,% hyperlink border will be red
+  filecolor=magenta,
+  urlcolor=blue
+}
+%\makeatletter
+%\Hy@AtBeginDocument{%
+%  \def\@pdfborder{0 0 1}% Overrides border definition set with colorlinks=true
+%  \def\@pdfborderstyle{/S/U/W 1}% Overrides border style set with colorlinks=true
+%                                % Hyperlink border style will be underline of width 1pt
+%}
+%\makeatother
+\usepackage{float}
+
+\parindent0cm\textwidth15.5cm\oddsidemargin0cm
+\textheight23cm\topskip-1cm\headheight0cm\topmargin0cm
+
+\renewcommand{\familydefault}{cmss}
+\renewcommand{\seriesdefault}{m}
+%\renewcommand{\shapedefault}{n,sc,it,sl}
+\renewcommand{\shapedefault}{n}
+
+\title{KF1 - Induced activity and decay}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\renewcommand*\contentsname{Table of contents}
+\tableofcontents
+\newpage
+
+\section{Learning Outcomes}
+\begin{itemize}
+    \item ...
+\end{itemize}
+
+\section{Preparations - before the lab}
+
+\subsection{Reading instructions}
+\begin{itemize}
+    \item Introductory Nuclear Physics - Krane, sections 7.2.
+    \item Nuclear Physics Principles and Applications - John Lilley - sections 5.3, 5.4, 6.2, (available online through library)
+\end{itemize}
+
+\subsection{Data analysis}
+\begin{itemize}
+    \item Ensure you have configured a laptop to run {\it Jupyter Notebook}, see other document ....
+    \item Introduce yourself to the data analysis, by walking through the skeleton {\it Jupyter Notebook} for the lab.
+\end{itemize}
+
+\subsection{Bring}
+\begin{itemize}
+    \item Lab manual with all attachments.
+    \item Course book.
+    \item Laptop.
+    \item USB stick (one person per group).
+\end{itemize}
+
+\subsection{Exercises/Test}
+\begin{itemize}
+  \item Complete the lab preparation test on the course web page.
+\end{itemize}
+
+{\bf NOTE:} if you do not fulfil the required preparations for the lab you will need to do the lab at another occasion.
+
+\section{Procedure}
+
+\subsection{Schedule}
+Lab starts at 13:15 in H212.
+
+\begin{itemize}
+    \item Preparations are checked. 
+    \item Ambiguities in the preparations for the lab are discussed.
+    \item Relevant safety measures for the current lab are walked through.
+    \item The electronic instruments and signals are deeper examined with the help of an oscilloscope and through discussions of the generated spectra on the computer.
+    \item Measurements are undertaken.
+\end{itemize}
+
+Lab ends by 18:00.
+
+\subsection{Tasks}
+The following properties of $\gamma$-ray detection and nuclear structure, will be studied and discussed \underline{and they are to be included in the reports}:
+\begin{enumerate}
+  \item Explain the main features of the spectra from the $^{22}$Na, $^{137}$Cs and $^{232}$Th source measurements. The following should be explained at least to one spectrum:
+    \begin{itemize}
+      \item Where is the full energy peak and what does it represent?
+      \item What are the Compton continuum, Compton edge and the backscatter peak and why do they appear?
+      \item In which spectrum can one observe single and double escape peaks, why and what are they?
+      \item How can we know that a source emits $\beta^{+}$ particles?
+      \item X-rays can be observed. From what process do they stem and from what element are they emitted?
+    \end{itemize}
+  \item Calculate the peak centroids and full width at half maximum (FWHM) by the means of a Gaussian fit for all the peaks that are to be used in the calibration and in the calculation of the deuteron binding energy.
+  \item Perform an energy calibration of both detectors on the basis of at least five peaks from the measurements of $^{22}$Na, $^{60}$Co, $^{137}$Cs (and $^{232}$Th for HPGe). Recall that the energy calibration is the linear dependence between the ADC channel number and the energies of the above-mentioned peaks. It should be performed with a linear regression. Do not forget to include errors.
+  \item Determine the ratio between the emitted 1273 keV $\gamma$ rays and the photons emitted from the annihilation of the $\beta^+$ decay of $^{22}$Na. Do this from the measured peak intensities of the NaI(Tl) scintillator spectrum. Correct the obtained values for efficiency ($\varepsilon_{eff}$) and peak-to-total ratio ($\varepsilon_{P/T}$). See ``KF6-Attachments.pdf`` for efficiency values and note that the cylindrical NaI-scintillator has dimensions 7.62x7.62~cm$^2$ (diameter and length). Compare the result to the expected value. Do not forget to propagate the errors.
+  \item Determine the internal conversion coefficient ($\alpha$) for $^{137}$Ba from the measured peak intensities of the $^{137}$Cs source, i.e. the area of the peaks, of the HPGe semiconductor spectrum. Do not forget to correct for efficiency (use the following: $\varepsilon_{eff} \cdot \varepsilon_{P/T} = 0.9$ and 0.3 at x-ray energies and at 662 keV, respectively), the emission of Auger electrons (see Table T1 in the ``KF6-Attachments.pdf``) and the error analysis. Compare the obtained value with literature and discuss.
+  \item Plot the FWHM as a function of $\gamma$-ray energy, for at least the calibration peaks, for both detectors. Discuss the results:
+    \begin{itemize}
+      \item Why are the FWHM values of the HPGe detector lower than for the NaI(Tl)?
+      \item What kind of relationship exists between the FWHM and the $\gamma$-ray energy? Discuss your findings and try to connect them to the definition of energy resolution.
+    \end{itemize}
+  \item From the measurement of the $^{252}$Cf source (surrounded by water) with the HPGe detector determine the binding energy of the deuteron. Also, describe how the the deuteron is created.
+  \item A calibrated spectrum of background radiation can be found in the file ``Background.txt'' in ``analysis code'' in the uploaded folder on the course web page. The spectrum was taken with a HPGe detector over a weekend. To load this data have a look at the {\it Jupyter Notebook}. Determine the energies of the $\gamma$-rays from this background measurement and try to associate them with an isotope. Use either the document available in this folder or an internet database: \\
+    KF6-RadionuclideTable-Gamma.pdf \\
+    \href{https://www-nds.iaea.org/xgamma\_standards/}{https://www-nds.iaea.org/xgamma\_standards/}
+\end{enumerate}
+
+\underline{Do not forget to propagate errors in all calculations.} All measured spectra will be saved in ASCII format and is to be taken with you after the lab on a USB-drive. For tips on how to perform the data analysis see the jupyter notebook located in the ``analysis code'' in the folder that has been uploaded to the course web page.
+
+\section{Report}
+No written report is necessary for this lab. Instead you will hand in the jupyter notebook which you have been using for analysis of the data and answered question regarding the lab tasks and activities in. This notebook will represent your level of participation and knowledge of the subject matter covered during the lab. Each student is expected to hand in his/her own jupyter notebook. 
+All notebooks are processed by \textit{Urkund}, a plagiarism checker.
+
+\pagebreak
+\section{Useful Websites \& reference material}
+\begin{itemize}
+    \item \href{http://bricc.anu.edu.au}{http://bricc.anu.edu.au} - BrIcc - internal conversion coefficient calculator
+    \item \href{https://www.nndc.bnl.gov/nudat2/reSize.jsp?cc=5}{https://www.nndc.bnl.gov/nudat2/reSize.jsp?cc=5} - NuDat2 - interactive chart of nuclides
+    \item \href{http://www.lnhb.fr/nuclear-data/nuclear-data-table}{http://www.lnhb.fr/nuclear-data/nuclear-data-table/} - LNHB reccommended data - decay data sheets
+    \item Krane, sections 7.1, 7.3, 7.4, 7.6
+    \item Nuclears Physics, Principles and Applications - John Lilley - sections 5.3, 5.4, 6.3, 6.4, 6.5 (available online through library)
+    \item Practical Gamma-ray Spectrometry - Gordon R. Gilmore (available online through library)
+    \item Radiation Detection and Measurement - Glenn G. Knoll
+\end{itemize}
+\end{document}
